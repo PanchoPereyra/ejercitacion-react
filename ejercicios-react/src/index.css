@@ -1,1 +1,36 @@
 @import "tailwindcss";
+
+/* body {
+  background-image: url('/img/logo-utn-2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+} */
+
+body {
+  position: relative;
+  background-color: #ebe5e5; /* Fondo de respaldo */
+  overflow-x: hidden;
+}
+
+/* Capa exclusiva para el fondo con rotación y repetición */
+body::before {
+  content: "";
+  position: fixed;
+  /* Margen negativo grande para que al rotar 45° no queden esquinas blancas */
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  
+  background-image: url('/img/logo-utn-2.jpg');
+  background-repeat: repeat;    /* 1. SE REPITE EN MOSAICO */
+  background-size: 150px;       /* 2. Ajustá el tamaño de cada ícono repetido (probá 100px, 200px, etc.) */
+  
+  transform: rotate(45deg);     /* 3. GIRA LA IMAGEN 45 GRADOS */
+  opacity: 0.08;                /* 4. Bien tenue para que no moleste al leer */
+  z-index: -1;                  /* Lo mandamos al fondo de todo */
+  pointer-events: none;         /* Para que no interfiera con clicks */
+}
