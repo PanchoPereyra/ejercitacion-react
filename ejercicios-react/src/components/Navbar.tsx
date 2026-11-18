@@ -1,19 +1,19 @@
-export type ExerciseId = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type ExerciseId = 1 | 2 | 3 | 4 | 5 | 6 | 7| 8;
 
 interface NavbarProps {
   selectedExercise: ExerciseId;
   onExerciseSelect: (exercise: ExerciseId) => void;
 }
 
-// Usamos '\n' para indicar el salto de línea en el texto
 const exercises = [
-  { id: 1, title: "Ejercicio 1\nProductos" },
-  { id: 2, title: "Ejercicio 2\nContador" },
-  { id: 3, title: "Ejercicio 3\nMostrar/Ocultar" },
-  { id: 4, title: "Ejercicio 4\nConversión de Grados" },
-  { id: 5, title: "Ejercicio 5\nCompra" },
-  { id: 6, title: "Ejercicio 6\nBuscador" },
-  { id: 7, title: "Ejercicio 7\nOferta" },
+  { id: 1, title: "Enunciado\nEjercicios" },
+  { id: 2, title: "Ejercicio 1\nProducto" },
+  { id: 3, title: "Ejercicio 2\nContador" },
+  { id: 4, title: "Ejercicio 3\nMostrar/Ocultar" },
+  { id: 5, title: "Ejercicio 4\nConversión de Grados" },
+  { id: 6, title: "Ejercicio 5\nCompra" },
+  { id: 7, title: "Ejercicio 6\nBuscador" },
+  { id: 8, title: "Ejercicio 7\nOferta" },
 ];
 
 export function Navbar({ selectedExercise, onExerciseSelect }: NavbarProps) {

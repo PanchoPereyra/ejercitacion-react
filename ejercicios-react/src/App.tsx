@@ -13,6 +13,7 @@ import { Conversion } from './components/Conversion';
 import { Compra } from './components/Compra';
 import { Buscador } from './components/Buscador';
 import { Oferta } from './components/Oferta';
+import { Enunciado } from './components/Enunciado';
 
 export default function App() {
   const [selectedExercise, setSelectedExercise] = useState<ExerciseId>(1);
@@ -31,15 +32,14 @@ export default function App() {
 
         <section className="bg-white shadow-sm border border-slate-200 p-8 mb-8 rounded-lg">
           <h2 className="text-center text-2xl font-bold text-slate-900 mb-6">
-            Ejercicio {selectedExercise}
-            {selectedExercise === 1? ': Productos'
-              : selectedExercise === 2 ? ': Contador': 
-              selectedExercise === 3 ? ': Mostrar/Ocultar' : 
-              selectedExercise === 4 ? ': Conversión de Grados' :
-              selectedExercise === 5 ? ': Compra' :
-              selectedExercise === 6 ? ': Buscador' :
-              selectedExercise === 7 ? ': Oferta' : ''
-              }
+            {selectedExercise === 1 ? 'Ejercicio 1: Productos'
+              : selectedExercise === 2 ? 'Ejercicio 2: Contador'
+              : selectedExercise === 3 ? 'Ejercicio 3: Mostrar/Ocultar'
+              : selectedExercise === 4 ? 'Ejercicio 4: Conversión de Grados'
+              : selectedExercise === 5 ? 'Ejercicio 5: Compra'
+              : selectedExercise === 6 ? 'Ejercicio 6: Buscador'
+              : selectedExercise === 7 ? 'Ejercicio 7: Oferta'
+              : 'Enunciado de Ejercicios'}
           </h2>
 
           {selectedExercise === 1 ? (
@@ -95,6 +95,8 @@ export default function App() {
                 oferta={true}
               />
             </div>
+          ) : selectedExercise === 8 ? (
+            <Enunciado />
           ) : (
             <p className="text-center text-slate-600">
               El ejercicio {selectedExercise} todavía no tiene un componente asignado.
