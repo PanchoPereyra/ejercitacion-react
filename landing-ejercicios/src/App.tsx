@@ -32,25 +32,27 @@ export default function App() {
 
         <section className="bg-white shadow-sm border border-slate-200 p-8 mb-8 rounded-lg">
           <h2 className="text-center text-2xl font-bold text-slate-900 mb-6">
-            {selectedExercise === 1 ? 'Ejercicio 1: Productos'
-              : selectedExercise === 2 ? 'Ejercicio 2: Contador'
-              : selectedExercise === 3 ? 'Ejercicio 3: Mostrar/Ocultar'
-              : selectedExercise === 4 ? 'Ejercicio 4: Conversión de Grados'
-              : selectedExercise === 5 ? 'Ejercicio 5: Compra'
-              : selectedExercise === 6 ? 'Ejercicio 6: Buscador'
-              : selectedExercise === 7 ? 'Ejercicio 7: Oferta'
-              : 'Enunciado de Ejercicios'}
+            {selectedExercise === 1 ? 'Enunciado de Ejercicios'
+              : selectedExercise === 2 ? 'Ejercicio 1: Productos'
+              : selectedExercise === 3 ? 'Ejercicio 2: Contador'
+              : selectedExercise === 4 ? 'Ejercicio 3: Mostrar/Ocultar'
+              : selectedExercise === 5 ? 'Ejercicio 4: Conversión de Grados'
+              : selectedExercise === 6 ? 'Ejercicio 5: Compra'
+              : selectedExercise === 7 ? 'Ejercicio 6: Buscador'
+              : 'Ejercicio 7: Oferta'}
           </h2>
 
           {selectedExercise === 1 ? (
+            <Enunciado />
+          ) : selectedExercise === 2 ? (
             <div className="flex flex-wrap justify-center gap-4 w-full">
               <Producto nombre="Teclado" precio={45000} stock={12} descripcion="Teclado mecánico Genius" />
               <Producto nombre="Mouse" precio={18000} stock={0} descripcion="Mouse inalámbrico Logitech" />
               <Producto nombre="Monitor" precio={320000} stock={3} descripcion="Monitor Samsung 24 pulgadas" />
             </div>
-          ) : selectedExercise === 2 ? (
-            <Contador />
           ) : selectedExercise === 3 ? (
+            <Contador />
+          ) : selectedExercise === 4 ? (
             <div className="flex flex-col items-center bg-white p-6 rounded-2xl border border-slate-200 shadow-sm gap-4">
               <h1 className="w-full text-center font-roboto text-3xl text-slate-900 ">
                 ¿Qué es JSX?
@@ -60,19 +62,19 @@ export default function App() {
                 <MostrarOcultar significado="Sintaxis que permite escribir estructuras HTML de manera dentro de JavaScript. Se transforma en llamadas a funciones de React." />
               </div>
             </div>
-          ) : selectedExercise === 4 ? (
+          ) : selectedExercise === 5 ? (
             <div className="flex items-center justify-center bg-slate-50 p-4">
               <Conversion />
             </div>
-          ) : selectedExercise === 5 ? (
+          ) : selectedExercise === 6 ? (
             <div className="flex  items-center justify-center bg-slate-50 p-4">
               <Compra />
             </div>
-          ) : selectedExercise === 6 ? (
+          ) : selectedExercise === 7 ? (
             <div className="flex items-center justify-center rounded-lg bg-slate-50 p-4">
               <Buscador />
             </div>
-          ) : selectedExercise === 7 ? (
+          ) : selectedExercise === 8 ? (
             <div className="p-6 flex gap-4 flex-wrap justify-center">
               <Oferta
                 nombre="Teclado"
@@ -95,8 +97,6 @@ export default function App() {
                 oferta={true}
               />
             </div>
-          ) : selectedExercise === 8 ? (
-            <Enunciado />
           ) : (
             <p className="text-center text-slate-600">
               El ejercicio {selectedExercise} todavía no tiene un componente asignado.
