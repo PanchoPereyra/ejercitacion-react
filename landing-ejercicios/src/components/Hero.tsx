@@ -6,7 +6,7 @@ export function Hero() {
   <div 
     className="absolute inset-0 z-0 opacity-[1.00]" 
     style={{
-      backgroundImage: "url('/img/foto-facultad.jpg')",
+      backgroundImage: `url('${import.meta.env.BASE_URL}img/foto-facultad.jpg')`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat"
@@ -47,7 +47,7 @@ export function Hero() {
       {/* Columna derecha: Logo UTN */}
       {/* <div className="flex-shrink-0 relative z-10">
         <img
-          src="/img/logo-utn-4.jpg"  
+          src={`${import.meta.env.BASE_URL}img/logo-utn-4.jpg`}
           alt="Logo UTN Facultad Regional Paraná"
           className="rounded-xl h-20 md:h-40 object-contain shadow-md" 
         />
